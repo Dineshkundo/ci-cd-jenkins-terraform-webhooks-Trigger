@@ -3,13 +3,16 @@ pipeline {
 	
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-key')
-	GIT_TOKEN = credentials('git-token')
+        GIT_TOKEN = credentials('git-token')
     }
 	
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com/Dineshkundo/ci-cd-jenkins-terraform-webhooks-Trigger.git"
+                script {
+                    def gitUrl = "https://${GIT_TOKEN}@github.com/Dineshkundo/ci-cd-jenkins-terraform-webhooks-Trigger.git"
+                    git url: gitUrl, branch: 'main'
+                }
             }
         }
         
