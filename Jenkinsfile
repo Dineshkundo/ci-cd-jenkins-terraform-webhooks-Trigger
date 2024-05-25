@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com/vishal-bulbule/cd-jenkins-terraform-webhooks-Trigger.git"
+               git "https://${GIT_TOKEN}@github.com/Dineshkundo/cd-jenkins-terraform-webhooks-Trigger.git"
             }
         }
         
